@@ -18,15 +18,7 @@ var DB = models.Db
 func GetUsers(w http.ResponseWriter, r *http.Request) {
 	var Users []models.User
 	DB.Find(&Users)
-	// models.db.Find(&Users)
-	// return Users
-	// Users := models.GetAllBooks()
-
-	// var Users []models.User
-	// db.Find(&Users)
 	fmt.Println(Users)
-	// return Users
-
 	res, _ := json.Marshal(Users)
 	w.Header().Set("Content-Type", "pkglication/json")
 	w.WriteHeader(http.StatusOK)
